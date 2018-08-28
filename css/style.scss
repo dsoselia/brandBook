@@ -1,0 +1,307 @@
+$font-mrgvlovani:    bpg_mrgvlovani_2009;
+$font-caps:   bpg_mrgvlovani_caps;
+$font-Montserrat:   MontserratAlternatesBold;
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  list-style-type: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+-webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: $font-mrgvlovani;
+}
+h1,h2,h3,h4,h5{
+  font-family: $font-caps;
+}
+
+a,a:hover{
+  text-decoration: none;
+}
+
+body{
+  background-color: #EDF2F4;
+}
+
+// select style
+
+
+$background: #e74c3c;
+$select-color: #fff;
+$select-background: #c0392b;
+$select-width: 220px;
+$select-height: 40px; 
+
+
+.color_list,.spectrums_color-box,.gradients-box,.logo_test_box{
+  width:80%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:0 auto;
+  margin-top:80px;
+  flex-wrap:wrap;
+  .color_box{
+    &:hover{
+      transform:scale(1.1,1.1);
+      border-radius:4px;
+    }
+  }
+
+}
+.color_box{
+    width: 40px;
+    height: 45px;
+    cursor:pointer;
+    transition:0.5;
+}
+.sub_color_list{
+  background-color:#262626;
+  width:(210px*3);
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  align-items:center;
+  margin:0 auto;
+  margin-top:80px;
+    .sub_color_box{
+      width:(40px*5);
+      height:45px;
+      display:flex;
+      margin:15px 0px;
+    }
+}
+
+header{
+  width:100%;
+  background-color:#000;
+  .top_header{
+    width:1250px;
+    display:flex;
+    margin:0 auto;
+    justify-content:space-between;
+      .logo{
+        width:230px;
+        background-color:#01edbf;
+        text-align:center;
+        display:flex;
+        align-items: center;
+        justify-content:center;
+        height:56px;
+        a{
+          color:#000;
+          font-size:30px;
+        }
+        
+      }
+      .navbar{
+        ul{
+          display:flex;
+          width:910px;
+        padding-top:18px;
+        padding-bottom:10px;
+        justify-content:flex-start;
+        align-items: center;
+        li{
+          margin-right:140px;
+          a{
+            color:#fff;
+            font-family:$font-caps;
+            text-transform:uppercase;
+          }
+        }
+        }
+      }
+  }
+}
+
+.main_cont{
+  width:1250px;
+  margin:0 auto;
+  .profile_left_side{
+    width:230px;
+    height:500px;
+    background-color:#fff;
+    display:flex;
+    flex-direction:column;
+    .profile_header{
+          display: flex;
+    align-items: center;
+    margin-top: 22px;
+    margin-left: 37px;
+    margin-bottom:15px;
+    .company_logo{
+      img{
+        margin-left:20px;
+        height:75px;
+      }
+    }
+    }
+  }
+}
+.profile_menu{
+  width:100%;
+  ul{
+    width:100%;
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    li{
+      width:100%;
+
+      a{
+        display:inline-block;
+        width:100%;
+        padding-left:45px;
+        color:#000;
+        padding-top:5px;
+        padding-bottom:5px;
+        font-weight:bold;
+
+        span{
+          font-family:$font-caps;
+         font-size:14px;
+         &.menu_icon{
+          margin-right:5px;
+         }
+        }
+        &:hover{
+          background-color:#01edbf;
+        }
+        
+      }
+    }
+  }
+}
+
+.user_profile_cont{
+  display:flex;
+  justify-content:space-between;
+}
+.page_content{
+  width:910px;
+ 
+  margin-top:30px;
+  .user_colors,.user_gradient{
+       
+    width: 100%;
+    background-color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    PADDING-BOTTOM: 42PX;
+    .user_colors_name{
+        width: 154px;
+    margin-left: 15px;
+    margin-top: 15px;
+    border-top: 5px solid #000000;
+    padding-top: 8px;
+    }
+    .user_color_menu{
+     width: 680px;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-right: 15px;
+    border-top: 5px solid #000000;
+    padding-top: 8px;
+      .color_menu_title{
+        display: flex;
+    justify-content: space-between;
+      }
+      .user_color_list{
+        width: 100%;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      .choose_colors{
+              margin-top: 30px;
+    margin-bottom: 30px;
+          display:flex;
+          justify-content:space-between;
+          .color_menu{
+             width: 25%;
+               
+          }
+          .choose_color_box{
+               
+                height: 46px;
+                border: 3px solid #000;
+          }
+          .color_info{
+            font-size:13px;
+            margin-top:5px;
+          }
+          .choose_gradient_box{
+            height: 100px;
+           
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e74c3c+0,f9e79f+100 */
+background: #e74c3c; /* Old browsers */
+background: -moz-linear-gradient(top, #e74c3c 0%, #f9e79f 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #e74c3c 0%,#f9e79f 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #e74c3c 0%,#f9e79f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e74c3c', endColorstr='#f9e79f',GradientType=0 ); /* IE6-9 */
+
+          }
+        }
+        .page_number{
+             align-self: flex-end;
+              margin-top: 40px;
+              padding-left: 17px;
+              padding-top: 5px;
+              border-top: 5px solid;
+                  }
+                  .gradient_info{
+                    display:flex;
+                    .color_title{
+                          border: 1px solid black;
+              text-align: center;
+              font-size: 13px;
+             
+              width: 50%;
+              padding-top: 3px;
+              padding-bottom: 2px;
+}
+        }
+      }
+    }
+
+  }
+}
+
+.gradient-img{
+  width:100%;
+  height:100%;
+}
+.logo_test_box{
+  margin-bottom:50px;
+  .logo_box{
+      display:flex;
+      align-items:center;
+      text-align:center;
+    word-break: break-word;
+    letter-spacing: 3px;
+    &:first-child{
+          color:#ffffff;
+    }
+    &:nth-child(2){
+      color:#000000;
+    }
+    &:last-child{
+      color:#F9E79F;
+    }
+  }
+}

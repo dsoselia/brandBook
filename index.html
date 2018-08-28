@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Branbook</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
+
+  </head>
+  <body>
+    <div class="main_cont">
+          <div class="color_list">
+            <!--  <div class="main_color color_box" style="background-color:#84929E" data-main-color="#84929E"></div>
+             <div class="main_color color_box" style="background-color:#7DCE9F" data-main-color="#7DCE9F"></div> -->
+          </div>
+
+          <div class="sub_color_list">
+             <!--  <div class="sub_color_box">
+                   <div class="sub_color color_box" style="background-color:#84929E" data-sub-color="#84929E"></div>
+                   <div class="sub_color color_box" style="background-color:#84929E" data-sub-color="#84929E"></div>
+                   <div class="sub_color color_box" style="background-color:#84929E" data-sub-color="#84929E"></div>
+              </div>
+               <div class="sub_color_box">
+                   <div class="sub_color color_box" style="background-color:#84929E" data-sub-color="#84929E"></div>
+                   <div class="sub_color color_box" style="background-color:#84929E" data-sub-color="#84929E"></div>
+                   <div class="sub_color color_box" style="background-color:#84929E" data-sub-color="#84929E"></div>
+                    <div class="sub_color color_box" style="background-color:#84929E" data-sub-color="#84929E"></div>
+                     <div class="sub_color color_box" style="background-color:#84929E" data-sub-color="#84929E"></div>
+              </div>
+              <div class="sub_color_box">
+                   <div class="sub_color color_box" style="background-color:#84929E" data-sub-color="#84929E"></div>
+                   
+              </div>
+               <div class="sub_color_box">
+                   <div class="sub_color color_box" style="background-color:#84929E" data-sub-color="#84929E"></div>
+                   <div class="sub_color color_box" style="background-color:#84929E" data-sub-color="#84929E"></div>
+                   <div class="sub_color color_box" style="background-color:#84929E" data-sub-color="#84929E"></div>
+              </div>
+               <div class="sub_color_box">
+                   <div class="sub_color color_box" style="background-color:#84929E" data-sub-color="#84929E"></div>
+                   <div class="sub_color color_box" style="background-color:#84929E" data-sub-color="#84929E"></div>
+                   <div class="sub_color color_box" style="background-color:#84929E" data-sub-color="#84929E"></div>
+                    <div class="sub_color color_box" style="background-color:#84929E" data-sub-color="#84929E"></div>
+                     <div class="sub_color color_box" style="background-color:#84929E" data-sub-color="#84929E"></div>
+              </div>
+              <div class="sub_color_box">
+                   <div class="sub_color color_box" style="background-color:#84929E" data-sub-color="#84929E"></div>
+                   
+              </div> -->
+          </div>
+
+          <div class="spectrums_color-box">
+
+              <!--  <div class="spectrums_color color_box" style="background-color:#84929E" data-spectrums="#84929E"></div>
+                   <div class="spectrums_color color_box" style="background-color:#84929E" data-spectrums="#84929E"></div>
+                   <div class="spectrums_color color_box" style="background-color:#84929E" data-spectrums="#84929E"></div>
+                    <div class="spectrums_color color_box" style="background-color:#84929E" data-spectrums="#84929E"></div>
+                     <div class="spectrums_color color_box" style="background-color:#84929E" data-spectrums="#84929E"></div> -->
+          </div>
+
+
+          <div class="gradients-box">
+            
+                <div  class="color_box"><img  src="" alt=""></div>
+                <!--   <div class="spectrums_color color_box" style="background-color:#84929E" data-spectrums="#84929E"></div>
+                   <div class="spectrums_color color_box" style="background-color:#84929E" data-spectrums="#84929E"></div>
+                    <div class="spectrums_color color_box" style="background-color:#84929E" data-spectrums="#84929E"></div>
+                     <div class="spectrums_color color_box" style="background-color:#84929E" data-spectrums="#84929E"></div> -->
+          </div>
+           <div class="logo_test_box">
+            
+                <div  class="logo_box color_box">LOGO</div>
+                <div  class="logo_box color_box">LOGO</div>
+                <div  class="logo_box color_box">LOGO</div>
+               
+          </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $('.logo_box').hide();
+
+          var html='';
+          $.ajax({
+             url: "http://18.221.150.51/getmaincolors",
+             type: "GET",
+             success: function(result) {
+              var res = JSON.parse(result);
+           
+                for(var i=0;i<16;i++){
+                
+                    html+='<div class="main_color color_box" style="background-color:#'+res[i]+'" data-main-color="'+res[i]+'""></div>'
+                 
+                    }
+              $('.color_list').html(html);
+               
+              }
+            });
+
+         
+         $(document).on('click', '.main_color', function (event)  {
+           var url='';
+                      var mainColor = $(this).attr("data-main-color");
+                        var sub_color_html='';
+                        url+=mainColor;
+                            $.ajax({
+                               url: "http://18.221.150.51/getsubcolors?maincolor="+url,
+                               type: "GET",
+                               success: function(result) {
+                                var res = JSON.parse(result);
+                                  
+                                   for(var i=1;i<res.length;i++){
+                                    
+                                      for (var j = 0; j < res[i].length; j++) {
+                                          sub_color_html+='<div class="sub_color_box  data-submain-color="'+res[0]+'">'
+                                              
+                                             for(var k =0;k<res[i][j].length;k++){
+                                                sub_color_html+=' <div class="sub_color color_box" style="background-color:'+res[i][j][k]+'"data-sub-color="'+res[i][j][k]+'"></div>'
+                                             }
+                                           sub_color_html+='</div>';
+                                      }
+                                          sub_color_html+='</div>';
+                                }
+                                 $('.sub_color_list').html(sub_color_html);
+                                 
+                                }
+                              });
+                      
+              });
+    $(document).on('click', '.sub_color_box', function (event)  {
+        var sumnainColor =  $(this).attr("data-submain-color");
+        var spectrums_color_html="";
+       
+            for(var i=0; i< $(this).children().length; i++) {
+                var spectrumColor = $(this).children().eq(i).attr("data-sub-color");
+                 spectrumColor = spectrumColor.substr(1);
+                spectrums_color_html+=' <div class="spectrums_color color_box" style="background-color:#'+spectrumColor+'" data-spectrums="'+spectrumColor+'"></div>'
+               
+              
+              }
+            $('.spectrums_color-box').html(spectrums_color_html);
+            });
+                
+     $(document).on('click', '.spectrums_color', function (event)  {
+        var gradientHtml = '';
+        var sumnainColor =  $(this).attr("data-spectrums");
+        var src="http://18.221.150.51/getgradient?color1=";
+          src+=sumnainColor;
+
+
+          var colorArray = [];
+          $('.spectrums_color').each(function(index, el){
+            var spectrColor = $(this).attr('data-spectrums');
+            if(spectrColor!=sumnainColor){
+               colorArray.push(spectrColor);
+            }
+          
+           
+               
+          });
+          colorArray.push("ffffff","000000");
+
+          for(var i=0;i<5;i++){
+            
+              gradientHtml+='<div class="color_box"><img  class="gradient-img" src="'+src+'&color2='+colorArray[i]+'" alt=""></div>';
+          }
+         $('.gradients-box').html(gradientHtml);
+          $('.logo_box ').css('background-color','#'+sumnainColor);
+           $('.logo_box ').show();
+        });
+
+         $(document).on('click', '.gradient-img', function (event)  {
+           window.location.assign(window.location.href+'userpage.html');
+    
+        });
+
+    });
+</script>
+</html>
+
+
